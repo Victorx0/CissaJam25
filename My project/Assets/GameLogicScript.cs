@@ -51,11 +51,11 @@ public class GameLogicScript : MonoBehaviour
 
         // update reaction rate
         if (controlRodState == 0) {
-            reactionRate += 4 * Time.deltaTime;
+            reactionRate += 3 * Time.deltaTime;
         } else if (controlRodState == 1) {
             reactionRate += 0.5f * Time.deltaTime;
         } else {
-            reactionRate += -4 * Time.deltaTime;
+            reactionRate += -3 * Time.deltaTime;
         }
         if (reactionRate < 0) reactionRate = 0;
         if (reactionRate > 100) reactionRate = 100;
