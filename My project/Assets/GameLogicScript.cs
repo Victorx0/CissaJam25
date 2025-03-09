@@ -15,6 +15,7 @@ public class GameLogicScript : MonoBehaviour
     public Text batteryText; // temporary. probably display this in world?
     public Text coolantText;
     public Text fuelRodText;
+    public Text tipcool;
 
     public int ordersCompleted = 0; // number of full batteries delivered.
     public float reactionRate = 0; // from 0 to 100%
@@ -85,13 +86,24 @@ public class GameLogicScript : MonoBehaviour
         }
         
 
-        if ((batteryBar > 90) && (Input.GetKeyDown("space"))){
+        if ((batteryBar > 90) && (Input.GetKeyDown(KeyCode.F))){
             bool_script = ant.GetComponent<iscllose>();
             if (bool_script.isclose == true)
             {
                 ordersCompleted++;
 
                 batteryBar = 0;
+            }
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            bool_script = ant.GetComponent<iscllose>();
+            if (bool_script.isclose == true)
+            {
+                coolantTemp += -2;
+
             }
 
 
@@ -128,10 +140,13 @@ public class GameLogicScript : MonoBehaviour
     void updateCoolantWarning() {
         if (coolantTemp >= coolantHighTemp) {
             coolantText.text = "Warning: Coolant temperature too high";
+            tipcool.text = "spam Q next to the coolent station to lower heat";
         } else {
             coolantText.text = "";
+            tipcool.text = "";
         }
 
-    }
     
+    }
+
 }
