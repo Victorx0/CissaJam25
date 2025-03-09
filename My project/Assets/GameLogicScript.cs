@@ -3,6 +3,13 @@ using UnityEngine.UI;
 
 public class GameLogicScript : MonoBehaviour
 {
+    public iscllose bool_script;
+
+    public GameObject ant;
+    public Slider slid;
+    public Gradient gradient;
+    public Image fill; 
+
     public Text ordersCompletedText;
     public Text reactionRateText;
     public Text batteryText; // temporary. probably display this in world?
@@ -76,9 +83,24 @@ public class GameLogicScript : MonoBehaviour
         if (batteryBar > 100) {
             batteryBar = 100;
         }
+        
+
+        if ((batteryBar > 90) && (Input.GetKeyDown("space"))){
+            bool_script = ant.GetComponent<iscllose>();
+            if (bool_script.isclose == true)
+            {
+                ordersCompleted++;
+
+                batteryBar = 0;
+            }
+
+
+        }
         batteryText.text = "Battery: " + (int)batteryBar + "%";
 
         ordersCompletedText.text = "Orders completed: " + ordersCompleted;
+        slid.value = coolantTemp;
+        fill.color = gradient.Evaluate(slid.normalizedValue);
     }
 
     float getEnergyProductionFromReactionRate(float rate) {
@@ -109,5 +131,7 @@ public class GameLogicScript : MonoBehaviour
         } else {
             coolantText.text = "";
         }
+
     }
+    
 }
