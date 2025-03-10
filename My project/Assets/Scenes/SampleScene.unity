@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 154796910}
   - component: {fileID: 154796909}
   m_Layer: 0
-  m_Name: ReactionRateText
+  m_Name: Energy Production
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
