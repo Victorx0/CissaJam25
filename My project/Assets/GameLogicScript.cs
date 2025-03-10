@@ -7,6 +7,9 @@ public class GameLogicScript : MonoBehaviour
     public iscllose bool_script;
 
     public GameObject ant;
+
+    public battery bool_script1;
+    public GameObject ant1;
     public Slider slid;
     public Gradient gradient;
     public Image fill; 
@@ -56,7 +59,19 @@ public class GameLogicScript : MonoBehaviour
         // update fuel
         fuelRodPercent -= fuelRodUsePerSec * Time.deltaTime;
         if (fuelRodPercent <= 0) {
-            fuelRodPercent = 0;
+
+            bool_script1 = ant1.GetComponent<battery>();
+            if (bool_script1.isclose == true)
+            {
+                fuelRodPercent = 100;
+
+            }
+            else
+            {
+                fuelRodPercent = 0;
+
+            }
+
         }
         updateFuelWarning();
 
@@ -153,6 +168,7 @@ public class GameLogicScript : MonoBehaviour
     void updateFuelWarning() {
         if (fuelRodPercent <= 0) {
             fuelRodText.text = "Warning: Fuel empty";
+            
         } else {
             fuelRodText.text = "";
         }

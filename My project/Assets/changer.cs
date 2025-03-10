@@ -6,6 +6,6 @@ public class changer : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("movmentofText");
     }
 }
