@@ -130,7 +130,7 @@ public class GameLogicScript : MonoBehaviour
     void FixedUpdate()
     {
         tempText.text = "Current Temp: " + coolantTemp + "/ 60";
-        reactionRateTextMesh.text = "Reacton Rate: " + reactionRate + "/" + 100;
+        reactionRateTextMesh.text = "Reacton Rate: " + energyProduction;
         batteryBarTextMesh.text = "Current Power: " + batteryBar + " / " + 100;
         tasksTextMesh.text = "Tasks Today:" + ordersCompleted + "/" + "amount";
         fuelLeftTextMesh.text = "Fuel Left(%): " + fuelRodPercent;
