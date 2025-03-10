@@ -77,14 +77,11 @@ public class GameLogicScript1 : MonoBehaviour
                 warnin.text = "";
                 time1 = 0;
 
-
             }
             else if (bool_script3.isclose == false)
             {
 
                 warnin.text = "check the Pipes";
-
-
 
             }
 
@@ -95,7 +92,7 @@ public class GameLogicScript1 : MonoBehaviour
         }
 
 
-        if (time >= 240)
+        if (time >= 300)
         {
             if (ordersCompleted >= 3)
             {

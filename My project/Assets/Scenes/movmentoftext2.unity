@@ -443,7 +443,7 @@ MonoBehaviour:
     found\u2026\n\nYou are DESKTOP-K3N433. Assist your co-workers in properly running
     the different terminals in the power plant.\n\nWhile most terminals should have
     staff on duty, you may have to manage more terminals than usual if there is a
-    shortfall.\n\n"
+    shortfall.\n(You need to also take caer of the Pipes bursting(Just go to them))"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

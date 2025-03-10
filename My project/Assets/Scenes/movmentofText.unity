@@ -447,7 +447,8 @@ MonoBehaviour:
 
 
     Further instructions on how to properly run each terminal
-    should appear from your persistent memory storage when necessary.
+    should appear from your persistent memory storage when necessary.(if Battery
+    is 100% press F)
 
 '
   m_isRightToLeft: 0
