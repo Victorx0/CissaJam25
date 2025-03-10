@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameLogicScript : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class GameLogicScript : MonoBehaviour
     public Text coolantText;
     public Text fuelRodText;
     public Text tipcool;
+
+    public TextMeshPro tempText;
+    public TextMeshPro reactionRateTextMesh;
 
     public int ordersCompleted = 0; // number of full batteries delivered.
     public float reactionRate = 0; // from 0 to 100%
@@ -113,6 +117,12 @@ public class GameLogicScript : MonoBehaviour
         ordersCompletedText.text = "Orders completed: " + ordersCompleted;
         slid.value = coolantTemp;
         fill.color = gradient.Evaluate(slid.normalizedValue);
+    }
+
+    void FixedUpdate()
+    {
+        tempText.text = "Current Temp: " + coolantTemp + "/ 60";
+        reactionRateTextMesh.text = "Reacton Rate: " + reactionRate + "/" + 100;
     }
 
     float getEnergyProductionFromReactionRate(float rate) {
