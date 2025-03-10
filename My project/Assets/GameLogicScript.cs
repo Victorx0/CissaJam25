@@ -147,7 +147,7 @@ public class GameLogicScript : MonoBehaviour
         tempText.text = "Current Temp: " + coolantTemp + "/ 60";
         reactionRateTextMesh.text = "Reacton Rate: " + energyProduction;
         batteryBarTextMesh.text = "Current Power: " + batteryBar + " / " + 100;
-        tasksTextMesh.text = "Tasks Today:" + ordersCompleted + "/" + "amount";
+        tasksTextMesh.text = "Tasks Today:" + ordersCompleted + "/" + "3";
         fuelLeftTextMesh.text = "Fuel Left(%): " + fuelRodPercent;
     }
 
