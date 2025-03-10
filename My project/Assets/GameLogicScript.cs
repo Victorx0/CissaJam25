@@ -104,6 +104,11 @@ public class GameLogicScript : MonoBehaviour
 
 
         }
+        // temporary function to refuel by pressing p
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            fuelRodPercent = 100;
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             bool_script = ant.GetComponent<iscllose>();
