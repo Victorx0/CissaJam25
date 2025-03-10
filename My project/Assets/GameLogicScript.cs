@@ -22,6 +22,7 @@ public class GameLogicScript : MonoBehaviour
     public TextMeshPro reactionRateTextMesh;
     public TextMeshPro batteryBarTextMesh;
     public TextMeshPro tasksTextMesh;
+    public TextMeshPro fuelLeftTextMesh;
 
     public int ordersCompleted = 0; // number of full batteries delivered.
     public float reactionRate = 0; // from 0 to 100%
@@ -127,6 +128,7 @@ public class GameLogicScript : MonoBehaviour
         reactionRateTextMesh.text = "Reacton Rate: " + reactionRate + "/" + 100;
         batteryBarTextMesh.text = "Current Power: " + batteryBar + " / " + 100;
         tasksTextMesh.text = "Tasks Today:" + ordersCompleted + "/" + "amount";
+        fuelLeftTextMesh.text = "Fuel Left(%): " + fuelRodPercent;
     }
 
     float getEnergyProductionFromReactionRate(float rate) {
