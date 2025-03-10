@@ -4,11 +4,14 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
-public class GameLogicScript : MonoBehaviour
+public class GameLogicScript1 : MonoBehaviour
 {
     public iscllose bool_script;
 
     public GameObject ant;
+    public iscllose bool_script3;
+
+    public GameObject ant3;
 
     public battery bool_script1;
     public GameObject ant1;
@@ -22,6 +25,7 @@ public class GameLogicScript : MonoBehaviour
     public Text coolantText;
     public Text fuelRodText;
     public Text tipcool;
+    public Text warnin;
 
     public TextMeshPro tempText;
     public TextMeshPro reactionRateTextMesh;
@@ -50,10 +54,13 @@ public class GameLogicScript : MonoBehaviour
     public float reactionChangeControlRodDown = -4;
     string sceneName;
     float time;
+    float time1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        warnin.text = "";
 
 
     }
@@ -62,13 +69,38 @@ public class GameLogicScript : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        time1 += Time.deltaTime;
+        if (time1 > 20) {
+            bool_script3 = ant3.GetComponent<iscllose>();
+            if (bool_script3.isclose == true)
+            {
+                warnin.text = "";
+                time1 = 0;
 
-        if (time >= 180)
+
+            }
+            else if (bool_script3.isclose == false)
+            {
+
+                warnin.text = "check the Pipes";
+
+
+
+            }
+
+
+
+
+
+        }
+
+
+        if (time >= 240)
         {
             if (ordersCompleted >= 3)
             {
 
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(5);
 
             }
             else
@@ -114,7 +146,7 @@ public class GameLogicScript : MonoBehaviour
         if (reactionRate > 100) reactionRate = 100;
 
         // update energy production rate
-        if (fuelRodPercent > 0 && coolantTemp < coolantHighTemp) {
+        if (fuelRodPercent > 0 && coolantTemp < coolantHighTemp && time1 <20) {
             // produce energy based on reaction rate
             energyProduction = getEnergyProductionFromReactionRate(reactionRate);
         } else {
